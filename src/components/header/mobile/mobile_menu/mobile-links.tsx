@@ -16,7 +16,7 @@ interface MobileMenuProps {
 
 export const MobileLinks = ({ lang, isOpen, setIsOpen, routes }: MobileMenuProps) => {
   return (
-    <Menu.Root className={`${isOpen ? 'h-[calc(100vh-3.5rem)]' : ''}`}>
+    <Menu.Root className={`${isOpen ? 'h-screen pt-[3.45rem] ' : ''}`}>
       <Menu.Ul>
         <MobileMenuLinks lang={lang} routes={routes} setIsOpen={setIsOpen} />
         <li className='text-2xl'>
