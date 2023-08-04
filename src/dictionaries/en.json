@@ -1,3 +1,13 @@
 {
-  "title": "HELLO WORLD"
+  "vítor_dev_poritfolio": "Vítor Dev | Poritfolio",
+  "Vítor_is_a_web_designer_and_frontend_developer": {
+    "Vítor_is_a": "Vítor is a",
+    "web_designer": "web designer",
+    "and": "and",
+    "frontend_developer": "front-end developer"
+  },
+  "home": "home",
+  "works": "works",
+  "about_me": "about-me",
+  "contacts": "contacts"
 }
