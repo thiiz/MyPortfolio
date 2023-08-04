@@ -7,7 +7,7 @@ interface MobileMenuRootProps extends ComponentProps<"div"> {
 
 export const MobileMenuRoot: FC<MobileMenuRootProps> = ({ children, ...rest }) => {
   return (
-    <div {...rest} className={twMerge('transition-all duration-500 ease-out lg:hidden flex flex-col justify-between h-[0vh] inset-0 top-0 left-0 absolute bg-gray-950 mt-14 overflow-hidden', rest.className)}>
+    <div {...rest} className={twMerge('-z-10 transition-all duration-500 ease-out lg:hidden flex flex-col justify-between h-[0vh] inset-0 top-0 left-0 fixed bg-gray-950 pt-[0rem] overflow-hidden', rest.className)}>
       {children}
     </div>
   )
