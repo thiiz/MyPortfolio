@@ -43,6 +43,7 @@ export default function RootLayout({
        bg-red text-gray-950
        dark:bg-gray-950 dark:text-white
        `}>
+        {/* @ts-expect-error Async Component */}
         <Header lang={lang} />
         <main className="p-4 lg:p-0">
           {children}
