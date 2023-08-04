@@ -9,14 +9,13 @@ import { Dispatch, SetStateAction } from 'react'
 
 interface MobileMenuProps {
   lang: LangProps;
-  isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   routes: RoutesProps;
 }
 
-export const MobileLinks = ({ lang, isOpen, setIsOpen, routes }: MobileMenuProps) => {
+export const MobileLinks = ({ lang, setIsOpen, routes }: MobileMenuProps) => {
   return (
-    <Menu.Root className={`${isOpen ? 'h-screen pt-[3.45rem] ' : ''}`}>
+    <Menu.Root>
       <Menu.Ul>
         <MobileMenuLinks lang={lang} routes={routes} setIsOpen={setIsOpen} />
         <li className='text-2xl'>

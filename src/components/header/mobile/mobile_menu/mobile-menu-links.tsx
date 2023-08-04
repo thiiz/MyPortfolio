@@ -12,12 +12,9 @@ interface MobileMenuLinksProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export const MobileMenuLinks = ({ lang, routes, setIsOpen }: MobileMenuLinksProps) => {
+export const MobileMenuLinks = ({ lang, routes }: MobileMenuLinksProps) => {
   const segment = useSelectedLayoutSegment()
 
-  useEffect(() => {
-    return setIsOpen(false)
-  }, [segment])
   return (
     <>
       {routes.map((route, index) => (

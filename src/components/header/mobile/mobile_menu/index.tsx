@@ -5,7 +5,8 @@ import ButtonHamburguer from "@/components/hamburguer";
 import { useEffect, useState } from "react";
 import { MobileLinks } from "./mobile-links";
 import { RoutesProps } from "@/@types/RoutesProps";
-
+import { usePathname } from "next/navigation";
+import { AnimatePresence } from 'framer-motion';
 interface MobileMenuProps {
   lang: LangProps;
   routes: RoutesProps;
@@ -13,13 +14,21 @@ interface MobileMenuProps {
 
 export const MobileMenu = ({ lang, routes }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
+  const path = usePathname()
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen])
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [path])
+
   return (
     <>
       <ButtonHamburguer isOpen={isOpen} onClick={() => setIsOpen(prev => !prev)} />
-      <MobileLinks lang={lang} isOpen={isOpen} setIsOpen={setIsOpen} routes={routes} />
+      <AnimatePresence>
+        {isOpen && <MobileLinks lang={lang} setIsOpen={setIsOpen} routes={routes} />}
+      </AnimatePresence>
     </>
   )
 }
