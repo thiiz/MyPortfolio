@@ -1,20 +1,28 @@
-import ButtonHamburguer from '../hamburguer'
 import { Logo } from '../logo'
-import { LangSwitcher } from './lang-switcher'
-
+import { MobileMenu } from './mobile/mobile_menu'
+import { LangSwitcher } from './lang_switcher'
+import { LangProps } from '@/@types/LangProps'
+import { getDictionary } from '@/utils/getDictionary'
+import { navRoutes } from '@/routes'
 interface HeaderProps {
-  lang: string
+  lang: LangProps
 }
 
-export const Header = ({ lang }: HeaderProps) => {
+export const Header = async ({ lang }: HeaderProps) => {
+  const dictionary = await getDictionary(lang)
+  const { routes } = navRoutes({ dictionary })
   return (
-    <header>
-      <div className='flex items-center gap-1.5'>
-        <Logo.Icon />
-        <Logo.Text />
+    <header className='container mx-auto px-4 py-2'>
+      <div className='flex justify-between '>
+        <div className='flex items-center gap-1.5'>
+          <Logo.Icon />
+          <Logo.Text />
+        </div>
+        <div className='hidden lg:block'>
+          <LangSwitcher lang={lang} />
+        </div>
+        <MobileMenu lang={lang} routes={routes} />
       </div>
-      <LangSwitcher lang={lang} />
-      <ButtonHamburguer />
-    </header>
+    </header >
   )
 }
