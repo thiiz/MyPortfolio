@@ -10,5 +10,7 @@
   "home": "inicio",
   "works": "trabajos",
   "about_me": "sobre",
-  "contacts": "contactos"
+  "contacts": "contactos",
+  "currently_working_on": "actualmente trabajando en el",
+  "portfolio": "portafolio"
 }

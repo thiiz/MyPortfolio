@@ -10,5 +10,7 @@
   "home": "home",
   "works": "works",
   "about_me": "about-me",
-  "contacts": "contacts"
+  "contacts": "contacts",
+  "currently_working_on": "currently working on",
+  "portfolio": "portfolio"
 }

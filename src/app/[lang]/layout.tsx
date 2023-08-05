@@ -42,10 +42,12 @@ export default function RootLayout({
         relative
        bg-red text-gray-950
        dark:bg-gray-950 dark:text-white
+       p-4 lg:p-0
+
        `}>
         {/* @ts-ignore Async Component*/}
         <Header lang={lang} />
-        <main className="p-4 lg:p-0">
+        <main className="container mx-auto">
           {children}
         </main>
       </body>
