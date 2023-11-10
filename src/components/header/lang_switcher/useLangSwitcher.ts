@@ -14,7 +14,7 @@ export const useLangSwitcher = ({ lang }: { lang: string }) => {
     if (lang === locale)
       return
     const newLocale = redirectPathname({ locale })
-    push(newLocale)
+    push(newLocale, { scroll: false })
   }
   return {
     handleChangeLocale

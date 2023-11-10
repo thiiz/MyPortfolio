@@ -5,7 +5,7 @@ interface ButtonHamburguerProps extends ComponentProps<'button'> {
   isOpen: boolean;
 }
 
-const ButtonHamburguer: FC<ButtonHamburguerProps> = ({ isOpen, ...rest }) => {
+export const ButtonHamburguer: FC<ButtonHamburguerProps> = ({ isOpen, ...rest }) => {
   return (
     <button {...rest} className="relative group min-h[2.5rem] block lg:hidden">
       <div className={twMerge("relative flex items-center justify-center rounded-full w-10 h-10 transform transition-all bg-slate-700 ring-0 ring-gray-50 hover:ring-8 ring-opacity-30 duration-200 shadow-md", isOpen ? "ring-4" : "")}>
@@ -18,5 +18,3 @@ const ButtonHamburguer: FC<ButtonHamburguerProps> = ({ isOpen, ...rest }) => {
     </button>
   );
 }
-
-export default ButtonHamburguer;

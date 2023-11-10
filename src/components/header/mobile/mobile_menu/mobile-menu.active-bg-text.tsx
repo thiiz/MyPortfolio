@@ -1,6 +1,7 @@
 'use client'
 
 import { LangProps } from "@/@types/LangProps"
+import { navRoutes } from "@/routes";
 import { getDictionary } from "@/utils/getDictionary"
 import { useEffect, useState } from "react";
 
@@ -14,23 +15,20 @@ export const MobileMenuActiveBgText = ({ lang, segment }: MobileMenuActiveBgText
   const [path, setPath] = useState<string | null>(null)
 
   const getPathName = async () => {
-    const dictionary = await getDictionary(lang)
-    const segments = [null, "about", "works", "contacts"];
-    const newPaths = [
-      dictionary.home.toUpperCase(),
-      dictionary.about_me.toUpperCase(),
-      dictionary.works.toUpperCase(),
-      dictionary.contacts.toUpperCase(),
-    ];
+    const dictionary = (await getDictionary(lang)).header;
+    const segments = (navRoutes({ dictionary: dictionary })).routes.map(route => route.targetSegment)
 
+    const newPaths = Object.values(dictionary);
     const index = segments.indexOf(segment);
     const newPath = index !== -1 ? newPaths[index] : newPaths[0];
+
     setPath(newPath)
   }
 
   useEffect(() => {
     getPathName()
   }, [segment, lang])
+  
   return (
     <p
       className='
@@ -45,7 +43,7 @@ export const MobileMenuActiveBgText = ({ lang, segment }: MobileMenuActiveBgText
     top-1/2 -translate-y-1/2
     truncate
     '>
-      {path}
+      {path?.toUpperCase()}
     </p>
   )
 }

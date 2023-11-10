@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FC, ReactNode } from "react";
 import { twMerge } from 'tailwind-merge';
+
 interface NavLinkProps {
   children: ReactNode;
   className?: string;
@@ -10,7 +11,12 @@ interface NavLinkProps {
 
 export const NavLinkAnchor: FC<NavLinkProps> = ({ isActive, children, ...rest }) => {
   return (
-    <Link {...rest} href={rest.href} className={twMerge(" z-10 block font-normal text-3xl text-gray-50 hover:text-white data-[isActive]:text-white", rest.className, isActive ? 'text-white' : '')}>
+    <Link
+      {...rest}
+      href={rest.href}
+      className={twMerge("py-2 lg:py-0.5 lg:px-2 z-10 flex w-5/6 lg:w-auto font-normal text-gray-50 hover:text-white",
+        rest.className, isActive ? 'text-white' : '')}
+    >
       <span className="text-primary">#</span>
       <span>
         {children}

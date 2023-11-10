@@ -18,7 +18,7 @@ export const MobileLinks = ({ lang, setIsOpen, routes }: MobileMenuProps) => {
     <Menu.Root>
       <Menu.Ul>
         <MobileMenuLinks lang={lang} routes={routes} setIsOpen={setIsOpen} />
-        <li className='text-2xl'>
+        <li className='text-2xl py-2'>
           <LangSwitcher lang={lang} />
         </li>
       </Menu.Ul>

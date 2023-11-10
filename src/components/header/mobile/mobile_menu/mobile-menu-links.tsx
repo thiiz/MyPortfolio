@@ -5,7 +5,8 @@ import { MobileMenu } from "@/components/mobile_menu"
 import { useSelectedLayoutSegment } from "next/navigation";
 import { MobileMenuActiveBgText } from "./mobile-menu.active-bg-text";
 import { RoutesProps } from "@/@types/RoutesProps";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction } from "react";
+
 interface MobileMenuLinksProps {
   lang: LangProps;
   routes: RoutesProps;
@@ -17,8 +18,8 @@ export const MobileMenuLinks = ({ lang, routes }: MobileMenuLinksProps) => {
 
   return (
     <>
-      {routes.map((route, index) => (
-        <MobileMenu.Item key={index} href={`/${lang}${route.href}`} isActive={segment === route.targetSegment}>
+      {routes.map((route) => (
+        <MobileMenu.Item key={route.text} href={`/${lang}${route.href}`} isActive={segment === route.targetSegment}>
           {route.text}
         </MobileMenu.Item>
       ))

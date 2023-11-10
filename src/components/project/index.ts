@@ -1,5 +1,5 @@
 import { ProjectsCard } from "./projects-card";
 
-export const Projects = {
+export const Project = {
   Card: ProjectsCard,
 }

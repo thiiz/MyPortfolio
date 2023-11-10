@@ -7,7 +7,7 @@ interface LangSwitcherOptionProps {
 
 export const LangSwitcherOption: FC<LangSwitcherOptionProps> = ({ children, ...rest }) => {
   return (
-    <option {...rest} value={rest.value}>
+    <option {...rest} value={rest.value} translate="no">
       {children}
     </option>
   )

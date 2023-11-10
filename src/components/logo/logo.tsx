@@ -1,6 +1,6 @@
 export const Logo = () => {
   return (
-    <svg width="106" height="106" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="156" height="156" viewBox="0 0 106 106" fill="none" xmlns="http://www.w3.org/2000/svg">
       <mask id="path-1-inside-1_200_1457" fill="white">
         <path fillRule="evenodd" clipRule="evenodd" d="M0 27.1087H26.1087H52.2175V53.2175H26.1087V79.3262H52.2175V105.435H26.1087H0V79.3262V53.2175V27.1087Z" />
       </mask>
