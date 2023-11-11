@@ -49,7 +49,7 @@ export default function RootLayout({
        `}>
         {/* @ts-ignore Async Component*/}
         <Header lang={lang} />
-        <main className="container mx-auto">
+        <main className="container mx-auto overflow-x-hidden">
           {children}
         </main>
         <Footer />

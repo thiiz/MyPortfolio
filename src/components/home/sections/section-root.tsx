@@ -8,7 +8,7 @@ interface SectionRootProps {
 
 export const SectionRoot: FC<SectionRootProps> = ({ children, ...rest }) => {
   return (
-    <section className={twMerge("overflow-hidden mt-16 w-full", rest.className)}>
+    <section className={twMerge("mt-16 w-full", rest.className)}>
       {children}
     </section>
   );

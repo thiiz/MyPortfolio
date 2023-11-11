@@ -36,7 +36,7 @@ export const PictureHero: FC<PictureHeroProps> = ({ dictionary }) => {
         <Logo />
       </motion.div>
       <motion.div
-        className="-z-10 absolute w-40 h-40 right-0 top-20 rotate-45">
+        className="-z-10 absolute w-40 h-40 right-0 top-20 rotate-45 ">
         <Cube repeat={Infinity} duration={2} />
       </motion.div>
       <Image
