@@ -46,7 +46,6 @@ export default function RootLayout({
        p-4 md:py-0 md:px-4
        selection:bg-primary
        selection:text-gray-950
-       overflow-x-hidden
        `}>
         {/* @ts-ignore Async Component*/}
         <Header lang={lang} />
