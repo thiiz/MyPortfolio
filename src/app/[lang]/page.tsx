@@ -6,7 +6,8 @@ import { HomeHero } from "@/components/home/hero";
 import { Quote } from "@/components/quote";
 import { Buttons } from "@/components/buttons";
 
-export default async function Home({ params: { lang } }: { params: { lang: LangProps } }) {
+export default async function Home({ params }: { params: Promise<{ lang: LangProps }> }) {
+  const { lang } = await params;
   const dictionary = (await getDictionary(lang)).homePage;
   return (
     <>

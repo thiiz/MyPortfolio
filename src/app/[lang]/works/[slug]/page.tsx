@@ -9,9 +9,10 @@ import { FaExternalLinkAlt, FaGithub, FaStar } from "react-icons/fa";
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: string; slug: string };
+  params: Promise<{ lang: string; slug: string }>;
 }): Promise<Metadata> {
-  const project = await getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -51,9 +52,10 @@ export async function generateStaticParams() {
 export default async function ProjectPage({
   params,
 }: {
-  params: { lang: string; slug: string };
+  params: Promise<{ lang: string; slug: string }>;
 }) {
-  const project = await getProjectBySlug(params.slug);
+  const { lang, slug } = await params;
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
@@ -62,7 +64,7 @@ export default async function ProjectPage({
   return (
     <div className="container mx-auto px-4 py-12">
       <Link
-        href={`/${params.lang}/works`}
+        href={`/${lang}/works`}
         className="inline-flex items-center gap-2 mb-8 text-gray-400 hover:text-primary transition-colors"
       >
         ← Back to Projects
