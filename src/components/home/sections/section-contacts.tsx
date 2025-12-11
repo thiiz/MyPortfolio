@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { SectionTitle } from "@/components/section_title";
-import Ellipses from "@/components/ellipses";
 import { Box } from "@/components/box";
+import Ellipses from "@/components/ellipses";
+import { SectionTitle } from "@/components/section_title";
+import { FC } from "react";
 import { FaDiscord } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Contacts } from "../contacts";
@@ -25,7 +25,7 @@ export const SectionContacts: FC<ContactsProps> = ({ title }) => {
           </div>
           <div className="flex w-full items-center gap-x-2 justify-center lg:justify-start">
             <MdEmail size={26} />
-            <span>elias@elias.me</span>
+            <span>vítor@vítor.me</span>
           </div>
         </Box>
       </Contacts.Root>

@@ -15,7 +15,7 @@ export const AboutText: FC<AboutTextProps> = () => {
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -200 }}
         transition={{ duration: 0.1 }}
-      >Hello, i’m Elias!</motion.span>
+      >Hello, i’m Vítor!</motion.span>
       <motion.span
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0 }}
